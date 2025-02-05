@@ -6,6 +6,8 @@ namespace primeraAnimacion
         // Declaramos una lista para almacenar las imágenes y una variable para el índice
         private List<Image> imagenes = new List<Image>();
         private int indiceImagen = 0;
+        int posicionX = 0; // Posición inicial en el eje X
+        int desplazamientoX = 5; // Cantidad de píxeles a mover en cada tick
 
         public Form1()
         {
@@ -35,8 +37,22 @@ namespace primeraAnimacion
         // Evento que se ejecuta en cada tick del Timer
         private void timer1_Tick(object sender, EventArgs e)
         {
-            // Actualizamos la imagen del PictureBox
             pictureBox1.Image = imagenes[indiceImagen];
+
+            // Mover el PictureBox en el eje X
+            posicionX += desplazamientoX;
+
+            // Si el PictureBox llega al borde derecho del formulario, reiniciar posición
+            if (posicionX + pictureBox1.Width > this.ClientSize.Width)
+            {
+                posicionX = 0;
+            }
+
+            // Actualizar la posición del PictureBox
+            pictureBox1.Location = new Point(posicionX, pictureBox1.Location.Y);
+
+            // Actualizar el Label con la posición del eje X
+            label1.Text = $"Posición X: {posicionX}";
 
             // Incrementamos el índice para la siguiente imagen
             indiceImagen++;
