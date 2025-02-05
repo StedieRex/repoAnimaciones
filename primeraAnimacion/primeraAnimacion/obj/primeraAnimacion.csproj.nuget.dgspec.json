@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\luisb\\OneDrive\\Escritorio\\animacionComputadora\\primeraAnimacion\\primeraAnimacion\\primeraAnimacion.csproj": {}
+    "C:\\Users\\Luis Pach\\Desktop\\repoAnimaciones\\primeraAnimacion\\primeraAnimacion\\primeraAnimacion.csproj": {}
   },
   "projects": {
-    "C:\\Users\\luisb\\OneDrive\\Escritorio\\animacionComputadora\\primeraAnimacion\\primeraAnimacion\\primeraAnimacion.csproj": {
+    "C:\\Users\\Luis Pach\\Desktop\\repoAnimaciones\\primeraAnimacion\\primeraAnimacion\\primeraAnimacion.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\luisb\\OneDrive\\Escritorio\\animacionComputadora\\primeraAnimacion\\primeraAnimacion\\primeraAnimacion.csproj",
+        "projectUniqueName": "C:\\Users\\Luis Pach\\Desktop\\repoAnimaciones\\primeraAnimacion\\primeraAnimacion\\primeraAnimacion.csproj",
         "projectName": "primeraAnimacion",
-        "projectPath": "C:\\Users\\luisb\\OneDrive\\Escritorio\\animacionComputadora\\primeraAnimacion\\primeraAnimacion\\primeraAnimacion.csproj",
-        "packagesPath": "C:\\Users\\luisb\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\luisb\\OneDrive\\Escritorio\\animacionComputadora\\primeraAnimacion\\primeraAnimacion\\obj\\",
+        "projectPath": "C:\\Users\\Luis Pach\\Desktop\\repoAnimaciones\\primeraAnimacion\\primeraAnimacion\\primeraAnimacion.csproj",
+        "packagesPath": "C:\\Users\\Luis Pach\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Luis Pach\\Desktop\\repoAnimaciones\\primeraAnimacion\\primeraAnimacion\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\luisb\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Luis Pach\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
