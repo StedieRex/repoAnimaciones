@@ -11,12 +11,12 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("primeraAnimacion")]
-[assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("segundaAnimacion")]
+[assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+71e79a9faf5da60fac36cd76c76662ca1bfd3aaa")]
-[assembly: System.Reflection.AssemblyProductAttribute("primeraAnimacion")]
-[assembly: System.Reflection.AssemblyTitleAttribute("primeraAnimacion")]
+[assembly: System.Reflection.AssemblyProductAttribute("segundaAnimacion")]
+[assembly: System.Reflection.AssemblyTitleAttribute("segundaAnimacion")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 [assembly: System.Runtime.Versioning.TargetPlatformAttribute("Windows7.0")]
 [assembly: System.Runtime.Versioning.SupportedOSPlatformAttribute("Windows7.0")]

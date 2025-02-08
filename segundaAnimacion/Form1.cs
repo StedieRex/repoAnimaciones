@@ -2,83 +2,67 @@ namespace segundaAnimacion
 {
     public partial class Form1 : Form
     {
-        enum EstadoSemaforo
-        {
-            Rojo,
-            Amarillo,
-            Verde
-        }
+        //lista para manipulacion de imagenes
+        private List<Image> imagenesP = new List<Image>();//imagenes personaje
+        private List<Image> imagenesS = new List<Image>();//imagenes semaforo
 
-        EstadoSemaforo estadoActual = EstadoSemaforo.Rojo;
-        int posicionPersonajeX = 0;
-        int velocidadPersonaje = 10;
-        Point posicionSemaforo = new Point(200, 100); // Ajusta según tus necesidades
-
-        int duracionVerde = 10000;   // 10 segundos
-        int duracionAmarillo = 3000; // 3 segundos
-        int duracionRojo = 4000;     // 4 segundos
-        int contadorTiempo = 0;      // Contador para el tiempo transcurrido
+        //variables para la animaicion del personaje
+        private int indiceImagen = 0;
 
         public Form1()
         {
             InitializeComponent();
             this.Load += new EventHandler(Form1_Load);
-            timer1.Tick += new EventHandler(timer1_Tick);
-            timer1.Interval = 100; // Intervalo de 100 ms para el Timer
+            this.Shown += new EventHandler(Form1_Shown);
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            pictureBox1.Location = posicionSemaforo;
+            //lista de imagenes de semaforo
+            imagenesS.Add(Properties.Resources.Semaforo);//rojo
+            imagenesS.Add(Properties.Resources.Semaforo2);//amarillo
+            imagenesS.Add(Properties.Resources.Semaforo3);//verde
+
+            //lista de imagenes personaje
+            imagenesP.Add(Properties.Resources.panel1);
+            imagenesP.Add(Properties.Resources.panel2);
+            imagenesP.Add(Properties.Resources.panel3);
+
+
+        }
+
+        private void Form1_Shown(object sender, EventArgs e)
+        {
+            timer1.Start();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            contadorTiempo += timer1.Interval;
-            label1.Text = contadorTiempo.ToString();
-            if ((estadoActual == EstadoSemaforo.Verde && contadorTiempo >= duracionVerde) ||
-                (estadoActual == EstadoSemaforo.Amarillo && contadorTiempo >= duracionAmarillo) ||
-                (estadoActual == EstadoSemaforo.Rojo && contadorTiempo >= duracionRojo))
+            pictureBox1.Image = imagenesP[indiceImagen];
+
+            // Mover el PictureBox en el eje X
+            posicionX += desplazamientoX;
+
+            // Si el PictureBox llega al borde derecho del formulario, reiniciar posición
+            if (posicionX + pictureBox1.Width > this.ClientSize.Width)
             {
-                CambiarEstadoSemaforo();
-                contadorTiempo = 0; // Reiniciar el contador al cambiar de estado
+                posicionX = 0;
             }
 
-            // Mover el personaje
-            MoverPersonaje();
-        }
+            // Actualizar la posición del PictureBox
+            pictureBox1.Location = new Point(posicionX, pictureBox1.Location.Y);
 
-        private void CambiarEstadoSemaforo()
-        {
-            switch (estadoActual)
+            // Actualizar el Label con la posición del eje X
+            label1.Text = $"Posición X: {posicionX}";
+
+            // Incrementamos el índice para la siguiente imagen
+            indiceImagen++;
+
+            // Si hemos llegado al final de la lista, reiniciamos el índice
+            if (indiceImagen >= imagenesP.Count)
             {
-                case EstadoSemaforo.Rojo:
-                    estadoActual = EstadoSemaforo.Amarillo;
-                    pictureBox1.Image = Properties.Resources.Semaforo2;
-                    break;
-                case EstadoSemaforo.Amarillo:
-                    estadoActual = EstadoSemaforo.Verde;
-                    pictureBox1.Image = Properties.Resources.Semaforo3;
-                    break;
-                case EstadoSemaforo.Verde:
-                    estadoActual = EstadoSemaforo.Rojo;
-                    pictureBox1.Image = Properties.Resources.Semaforo;
-                    break;
+                indiceImagen = 0;
             }
-        }
-
-        private void MoverPersonaje()
-        {
-            // Mover el personaje solo cuando el semáforo está en rojo o amarillo
-            if (estadoActual == EstadoSemaforo.Verde)
-            {
-                return;
-            }
-
-            posicionPersonajeX += velocidadPersonaje;
-
-            // Actualizar la posición del PictureBox del personaje
-            pictureBox2.Location = new Point(posicionPersonajeX, pictureBox2.Location.Y);
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
