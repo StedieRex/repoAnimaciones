@@ -21,8 +21,9 @@ namespace primeraAnimacion
         // Evento que se ejecuta al cargar el formulario
         private void Form1_Load(object sender, EventArgs e)
         {
-            imagenes.Add(Image.FromFile(@"C:\Users\Luis Pach\Desktop\repoAnimaciones\primeraAnimacion\dino2.png"));
-            imagenes.Add(Image.FromFile(@"C:\Users\Luis Pach\Desktop\repoAnimaciones\primeraAnimacion\dino3.png"));
+            imagenes.Add(Image.FromFile(@"C:\Users\Luis Pach\Desktop\repoAnimaciones\primeraAnimacion\panel1.png"));
+            imagenes.Add(Image.FromFile(@"C:\Users\Luis Pach\Desktop\repoAnimaciones\primeraAnimacion\panel2.png"));
+            imagenes.Add(Image.FromFile(@"C:\Users\Luis Pach\Desktop\repoAnimaciones\primeraAnimacion\panel3.png"));
             // Añade más imágenes según necesites
         }
 

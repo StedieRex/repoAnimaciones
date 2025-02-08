@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("primeraAnimacion")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f2ad1a6d2ae913a9871b9f8b4fb20c342433d057")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1855a8b23ebcf429ddc6c87b324d60a2bca8acb6")]
 [assembly: System.Reflection.AssemblyProductAttribute("primeraAnimacion")]
 [assembly: System.Reflection.AssemblyTitleAttribute("primeraAnimacion")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
