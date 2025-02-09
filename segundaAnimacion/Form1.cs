@@ -8,6 +8,8 @@ namespace segundaAnimacion
 
         //variables para la animaicion del personaje
         private int indiceImagen = 0;
+        int posicionX = 0;
+        int desplazamientoX = 5;
 
         public Form1()
         {
@@ -38,19 +40,19 @@ namespace segundaAnimacion
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            pictureBox1.Image = imagenesP[indiceImagen];
+            pictureBox2.Image = imagenesP[indiceImagen];
 
             // Mover el PictureBox en el eje X
             posicionX += desplazamientoX;
 
             // Si el PictureBox llega al borde derecho del formulario, reiniciar posición
-            if (posicionX + pictureBox1.Width > this.ClientSize.Width)
+            if (posicionX + pictureBox2.Width > this.ClientSize.Width)
             {
                 posicionX = 0;
             }
 
             // Actualizar la posición del PictureBox
-            pictureBox1.Location = new Point(posicionX, pictureBox1.Location.Y);
+            pictureBox2.Location = new Point(posicionX, pictureBox2.Location.Y);
 
             // Actualizar el Label con la posición del eje X
             label1.Text = $"Posición X: {posicionX}";
@@ -63,6 +65,9 @@ namespace segundaAnimacion
             {
                 indiceImagen = 0;
             }
+
+
+
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
