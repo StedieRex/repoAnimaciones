@@ -33,8 +33,12 @@
             timer1 = new System.Windows.Forms.Timer(components);
             pictureBox2 = new PictureBox();
             label1 = new Label();
+            pictureBox3 = new PictureBox();
+            label2 = new Label();
+            label3 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             SuspendLayout();
             // 
             // pictureBox1
@@ -71,11 +75,40 @@
             label1.TabIndex = 3;
             label1.Text = "label1";
             // 
+            // pictureBox3
+            // 
+            pictureBox3.Location = new Point(605, -1);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(13, 439);
+            pictureBox3.TabIndex = 4;
+            pictureBox3.TabStop = false;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(40, 46);
+            label2.Name = "label2";
+            label2.Size = new Size(38, 15);
+            label2.TabIndex = 5;
+            label2.Text = "label2";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(40, 73);
+            label3.Name = "label3";
+            label3.Size = new Size(38, 15);
+            label3.TabIndex = 6;
+            label3.Text = "label3";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(label3);
+            Controls.Add(label2);
+            Controls.Add(pictureBox3);
             Controls.Add(label1);
             Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);
@@ -84,6 +117,7 @@
             Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -94,5 +128,8 @@
         private System.Windows.Forms.Timer timer1;
         private PictureBox pictureBox2;
         private Label label1;
+        private PictureBox pictureBox3;
+        private Label label2;
+        private Label label3;
     }
 }

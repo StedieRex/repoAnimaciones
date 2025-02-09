@@ -9,7 +9,15 @@ namespace segundaAnimacion
         //variables para la animaicion del personaje
         private int indiceImagen = 0;
         int posicionX = 0;
-        int desplazamientoX = 5;
+        int desplazamientoX = 10;//el predeterminado es 5
+
+        //varibles para el semaforo peatonal
+        //cada 10 ticks es un segundo, el timer esta ajustado cada tick cada 100 milisec.
+        int contando_ticks = 0;
+        int rojo=170, amarillo=120, verde =100;
+
+        //posicion de la caja de colision
+        int colision_x;
 
         public Form1()
         {
@@ -38,10 +46,8 @@ namespace segundaAnimacion
             timer1.Start();
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+        private void Movimietno()
         {
-            pictureBox2.Image = imagenesP[indiceImagen];
-
             // Mover el PictureBox en el eje X
             posicionX += desplazamientoX;
 
@@ -54,9 +60,6 @@ namespace segundaAnimacion
             // Actualizar la posición del PictureBox
             pictureBox2.Location = new Point(posicionX, pictureBox2.Location.Y);
 
-            // Actualizar el Label con la posición del eje X
-            label1.Text = $"Posición X: {posicionX}";
-
             // Incrementamos el índice para la siguiente imagen
             indiceImagen++;
 
@@ -65,8 +68,39 @@ namespace segundaAnimacion
             {
                 indiceImagen = 0;
             }
+        }
 
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            colision_x = pictureBox3.Location.X;
+            pictureBox2.Image = imagenesP[indiceImagen];
 
+            // Actualizar el Label con la posición del eje X
+            label2.Text = $"Posición X: {posicionX}";
+
+            label3.Text = colision_x.ToString();
+
+            // CAMBIO DEL SEMAFORO
+            contando_ticks++;
+
+            if (contando_ticks < verde)
+            {
+                if (posicionX >(colision_x - 15)  && posicionX < (colision_x + 15))
+                {
+                    label1.Text = "no hay moviemiento";
+
+                }
+                else
+                {
+                    Movimietno();
+                }
+                pictureBox1.Image = imagenesS[2];
+            }
+            else
+            {
+                Movimietno();
+                pictureBox1.Image= imagenesS[1];
+            }
 
         }
 
