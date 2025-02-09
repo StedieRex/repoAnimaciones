@@ -77,6 +77,7 @@
             // 
             // pictureBox3
             // 
+            pictureBox3.BackColor = Color.Transparent;
             pictureBox3.Location = new Point(605, -1);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(13, 439);
@@ -108,10 +109,10 @@
             ClientSize = new Size(800, 450);
             Controls.Add(label3);
             Controls.Add(label2);
-            Controls.Add(pictureBox3);
             Controls.Add(label1);
             Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);
+            Controls.Add(pictureBox3);
             Name = "Form1";
             Text = "Form1";
             Load += Form1_Load;

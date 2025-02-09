@@ -14,7 +14,7 @@ namespace segundaAnimacion
         //varibles para el semaforo peatonal
         //cada 10 ticks es un segundo, el timer esta ajustado cada tick cada 100 milisec.
         int contando_ticks = 0;
-        int rojo=170, amarillo=120, verde =100;
+        int rojo, amarillo, verde;
 
         //posicion de la caja de colision
         int colision_x;
@@ -48,6 +48,7 @@ namespace segundaAnimacion
 
         private void Movimietno()
         {
+
             // Mover el PictureBox en el eje X
             posicionX += desplazamientoX;
 
@@ -72,6 +73,12 @@ namespace segundaAnimacion
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            //estandar para que mayormente se detengana
+            //verde 50, amarrillo 20, rojo 40
+            verde = 50;
+            amarillo = verde + 20;
+            rojo = amarillo + 40;
+
             colision_x = pictureBox3.Location.X;
             pictureBox2.Image = imagenesP[indiceImagen];
 
@@ -85,7 +92,17 @@ namespace segundaAnimacion
 
             if (contando_ticks < verde)
             {
-                if (posicionX >(colision_x - 15)  && posicionX < (colision_x + 15))
+                Movimietno();
+                pictureBox1.Image = imagenesS[2];
+            }
+            else if (contando_ticks < amarillo)
+            {
+                Movimietno();
+                pictureBox1.Image = imagenesS[1];
+            }
+            else if (contando_ticks < rojo)
+            {
+                if (posicionX > (colision_x - 15) && posicionX < (colision_x + 15))
                 {
                     label1.Text = "no hay moviemiento";
 
@@ -94,13 +111,10 @@ namespace segundaAnimacion
                 {
                     Movimietno();
                 }
-                pictureBox1.Image = imagenesS[2];
+                pictureBox1.Image = imagenesS[0];
             }
-            else
-            {
-                Movimietno();
-                pictureBox1.Image= imagenesS[1];
-            }
+            else { contando_ticks = 0; }
+
 
         }
 
